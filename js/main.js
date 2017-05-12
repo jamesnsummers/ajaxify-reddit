@@ -19,13 +19,15 @@ $(document).ready(function(){
   function onSuccess(json) {
     for (var i = 0; i < json.data.children.length; i++) {
       var listingImage = json.data.children[i].data.preview.images["0"].resolutions["0"].url;
+      var clickedImage = json.data.children[i].data.preview.images["0"].source.url;
       var title = json.data.children[i].data.title;
       var titleUrl = json.data.children[i].data.url;
       var postedTime = new Date (json.data.children[i].data.created);
       var author = json.data.children[i].data.author;
-      $('.container').append(`<a href=${listingImage}><img src = ${listingImage}/></>`)
+      var authorFlare = json.data.children[i].data.author_flair_text;
+      $('.container').append(`<a href=${clickedImage}><img src = ${listingImage}/></>`)
         .append(`<h3><a href=${titleUrl}>${title}</a></h3>`)
-        .append(`<p>submitted on ${postedTime} by ${author}<hr>`);
+        .append(`<p>submitted on ${postedTime} by ${author} <hr>`);
     }
   }
 
