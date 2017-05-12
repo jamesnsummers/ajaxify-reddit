@@ -18,12 +18,13 @@ $(document).ready(function(){
 
   function onSuccess(json) {
     for (var i = 0; i < json.data.children.length; i++) {
-      var image = json.data.children[i].data.preview.images["0"].resolutions["0"].url;
+      var listingImage = json.data.children[i].data.preview.images["0"].resolutions["0"].url;
       var title = json.data.children[i].data.title;
       var postedTime = new Date (json.data.children[i].data.created);
       var author = json.data.children[i].data.author;
 
-      $('.container').append(`<img src = ${image}/>`)
+      $('.col-md-4').append(`<img src = /images/reddit_icon.png />`);
+      $('.container').append(`<img src = ${listingImage}/>`)
         .append(`<h3>${title}</h3>`)
         .append(`<p>submitted on ${postedTime} by ${author}<hr>`);
     }
