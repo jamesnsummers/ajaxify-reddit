@@ -2,9 +2,6 @@
 var frontPage = 'https://www.reddit.com/.json';
 var rFunny = 'https://www.reddit.com/r/funny/.json';
 
-
-
-
 $(document).ready(function(){
 /* FUNCTION EXECUTION HERE */
   console.log('Go forth and code!');
@@ -19,19 +16,16 @@ $(document).ready(function(){
       });
     }
 
-  var now = new Date();
-
-
   function onSuccess(json) {
     for (var i = 0; i < json.data.children.length; i++) {
       var image = json.data.children[i].data.preview.images["0"].resolutions["0"].url;
       var title = json.data.children[i].data.title;
       var postedTime = new Date (json.data.children[i].data.created);
       var author = json.data.children[i].data.author;
-      
-      $('.container').append(`<img src = `+image+`/>`)
-        .append(`<h3>`+title+`</h3>`)
-        .append(`<p>submitted on `+postedTime+` by `+author+`<hr>`);
+
+      $('.container').append(`<img src = ${image}/>`)
+        .append(`<h3>${title}</h3>`)
+        .append(`<p>submitted on ${postedTime} by ${author}<hr>`);
     }
   }
 

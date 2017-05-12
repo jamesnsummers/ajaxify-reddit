@@ -7,6 +7,12 @@ nav ul li {
 h1 {
   font-family: 'Racing Sans One', cursive;
 }
+
+nav {
+
+  font-family: 'Yantramanav', sans-serif;
+}
+
 h3 {
   font-size: 2em;
   font-family: 'Hammersmith One', sans-serif;
