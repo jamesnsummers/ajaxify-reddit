@@ -3,3 +3,15 @@ nav ul li {
   list-style-type: none;
   margin-right: 25px;
 }
+
+h1 {
+  font-family: 'Racing Sans One', cursive;
+}
+h3 {
+  font-size: 2em;
+  font-family: 'Hammersmith One', sans-serif;
+}
+
+p {
+  font-family: 'Yantramanav', sans-serif;
+}
